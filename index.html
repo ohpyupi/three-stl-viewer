@@ -1,0 +1,183 @@
+<html>
+<head>
+	<base href='/'>
+	<title>Three STL Viewer</title>
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/themes/prism-okaidia.min.css' rel='stylesheet'>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Montserrat;
+    }
+    header {
+      background-color: #2b2c36; 
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+    header h1 {
+    }
+    header h3 {
+    }
+    header a {
+      color: #E86C0C; 
+    }
+    header hr {
+      margin: auto;
+      border: none;
+      width: 25px;
+      border-bottom: 1px solid rgba(230, 230, 230, .8);
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    a, a:hover {
+      color: #E86C0C;
+      text-decoration: none;
+	  }
+    a.btn {
+      background-color: #fff;
+      color: #000;
+      padding: 5px 10px;
+    }
+    header img.logo-threejs {
+      height: 40px;
+    }
+    .row {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+    }
+    .content .title {
+      margin-bottom: 20px;
+      font-size: 25px;
+    }
+    .content p {
+      line-height: 24px;
+    }
+    .content ul {
+      padding: 0 30px;
+    }
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+    .flex-row .col-50 {
+      width: 50%;
+      margin: 5px;
+    }
+    @media (max-width: 480px) {
+      .flex-row {
+        flex-direction: column;
+      }
+      .flex-row .col-50 {
+        margin: 0;
+        margin-bottom: 15px;
+        width: 100%;
+      }
+    }
+    footer {
+      display: block;
+      width: 100%;
+      float: left;
+      border-top: 15px solid rgba(180, 180, 180, .8);
+      height: 85px;
+      background-color: rgba(230, 230, 230, 1);
+    }
+    .con-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+  <h1>Three STL Viewer</h1>
+  <h3>created by <a href='https://github.com/ohpyupi' target='_blank'>ohpyupi</a></h3>
+  <hr/>
+  <a class='btn'>
+    <i class="fab fa-github"></i> 
+    Github
+  </a>
+  <a href='https://threejs.org/' target='_blank'>
+    <img class='logo-threejs' src='https://www.digitaltactics.co.uk/wp-content/uploads/sites/2/2015/11/three-js-logo-480x368.png'/>
+  </a>
+</header>
+
+<section class='content'>
+  <div class='row'>
+    <h3 class='title'>Introduction</h3>
+    <p>
+      Three STL Viewer is designed to provide a widget to easily render 3D models out of STL objects based on STLLoader from <a href='https://threejs.org/' target='_blank'>Three.js</a>.
+      Visit <a href='https://www.thingiverse.com/' target='_blank'>Thingiverse</a> to get a lot of STL files and test the visualization of those STL objects with Three STL Viewer!
+    </p>
+  </div>
+  <div class='row'>
+    <h3 class='title'>Dependencies</h3>
+    <ul>
+      <li>
+        <a target='_blank' href='https://jquery.com/'>jQuery</a>
+      </li>
+      <li>
+        <a target='_blank' href='https://bgrins.github.io/spectrum/'>jQuery Spectrum</a>
+      </li>
+      <li>
+        <a target='_blank' href='https://threejs.org/'>Three.js</a>
+      </li>
+    </ul>
+  </div>
+  <div class='row'>
+    <h3 class='title'>Download</h3>
+    <pre>
+      <code class='language-basic'>
+        npm install three-stl-viewer
+      </code>
+    </pre>
+  </div>
+  <div class='row'>
+    <h3 class='title'>Get Started</h3>
+    <pre>
+      <code class='language-javascript'>
+        // jQuery or $ should exist in global scope
+        import 'spectrum-colorpicker';
+        import 'spectrum-colorpicer/spectrum.css';
+        import ThreeSTLViewer from 'three-stl-viewer';
+
+        ...
+
+        let viewer = new ThreeSTLViewer({
+          selector: '#pikachu.stl-viewer',
+          urlToSTL: '/stl/pikachu.stl',
+        });
+      </code>
+    </pre>
+  </div>
+  <div class='row'>
+    <h3 class='title'>Examples</h3>
+    <div class='flex-row'>
+      <div id='pikachu' class='col-50 stl-viewer'></div>
+      <div id='balloon' class='col-50 stl-viewer'></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+
+</footer>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.11.0/components/prism-core.js'></script>
+<script type='text/javascript' src='/app.js'></script>
+
+</body>
+</html>
+
+
